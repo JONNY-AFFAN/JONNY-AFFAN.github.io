@@ -1,43 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JONNY-AFFAN</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JONNY // ACCESS</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      background: #000;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      margin:0;
+      background:#000;
+      color:#0f0;
+      font-family:'Courier New', monospace;
+      height:100vh;
+      overflow:hidden;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+    canvas {
+      position:fixed;
+      top:0; left:0;
+      z-index:1;
+      opacity:0.35;
+    }
+    .content {
+      position:relative;
+      z-index:10;
+      max-width:800px;
+      padding:20px;
     }
     h1 {
-      font-size: 5.5rem;
-      text-shadow: 0 0 20px #0f0;
+      font-size:5rem;
+      margin:0 0 20px 0;
+      text-shadow:0 0 20px #0f0;
+      letter-spacing:3px;
+    }
+    img {
+      width:340px;
+      border:3px solid #0f0;
+      box-shadow:0 0 25px #0f0;
+      margin:30px auto;
+      display:block;
     }
     p {
-      font-size: 1.8rem;
-      margin: 25px;
-    }
-    .note {
-      color: #ff3366;
-      font-size: 1.4rem;
-      margin-top: 80px;
+      font-size:1.7rem;
+      line-height:1.6;
+      margin:15px 0;
     }
   </style>
 </head>
 <body>
-  <h1>JONNY-AFFAN</h1>
-  <p>My first website is live!</p>
-  <p class="note">
-    Powered by GitHub Pages • 100% free<br>
-    https://JONNY-AFFAN.github.io
-  </p>
+
+  <canvas id="matrix"></canvas>
+
+  <div class="content">
+    <h1>JONNY<span style="color:#00ff9d"> / </span>AFFAN</h1>
+
+    <img src="JONNY CODES.jpeg" alt="Jonny Affan">
+
+    <p>Student • Web • AI • Apps</p>
+    <p>Not pro yet — just learning & building</p>
+
+    <p style="margin-top:70px; font-size:1.3rem; color:#444;">
+      SYSTEM ONLINE • 2026
+    </p>
+  </div>
+
+  <script>
+    const c = document.getElementById('matrix');
+    const ctx = c.getContext('2d');
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+
+    const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+    const font = 16;
+    const cols = c.width / font;
+    const drops = Array(Math.floor(cols)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0,0,0,0.05)';
+      ctx.fillRect(0,0,c.width,c.height);
+      ctx.fillStyle = '#0f0';
+      ctx.font = font + 'px monospace';
+
+      for(let i=0; i<drops.length; i++) {
+        const text = chars[Math.floor(Math.random()*chars.length)];
+        ctx.fillText(text, i*font, drops[i]*font);
+        if(drops[i]*font > c.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 35);
+  </script>
 </body>
 </html>
