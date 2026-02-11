@@ -32,7 +32,7 @@
       position: relative;
       z-index: 10;
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px 120px 20px; /* extra bottom padding so credit isn't hidden */
       max-width: 900px;
       margin: 0 auto;
     }
@@ -42,7 +42,7 @@
       border: 3px solid #0f0;
       box-shadow: 0 0 25px rgba(0,255,0,0.5);
       border-radius: 10px;
-      margin: 35px auto 45px auto;
+      margin: 35px auto 50px auto;
       display: block;
     }
     h1 {
@@ -54,7 +54,7 @@
     h2 {
       color: #00ff9d;
       font-size: 2rem;
-      margin: 50px 0 20px 0;
+      margin: 60px 0 20px 0;
       border-bottom: 2px solid #0f0;
       display: inline-block;
       padding-bottom: 8px;
@@ -65,10 +65,10 @@
       margin: 14px 0;
     }
     .section {
-      margin-bottom: 60px;
+      margin-bottom: 70px;
     }
     .highlight {
-      color: #0f0;
+      color: #0f0 !important;           /* forced green, no override possible */
       font-weight: bold;
     }
     .footer {
@@ -77,10 +77,12 @@
       color: #555;
     }
     .credit {
-      margin-top: 100px;
-      font-size: 1.3rem;
+      margin-top: 140px;                /* more space so it's clearly visible */
+      font-size: 1.35rem;
       color: #00ff9d;
-      line-height: 1.8;
+      line-height: 1.9;
+      padding: 20px 0;
+      border-top: 1px solid #0f0;
     }
     a {
       color: #00ff9d;
@@ -88,22 +90,21 @@
       border-bottom: 1px solid #0f0;
     }
     a:hover {
-      color: #00ff9d;
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Green moving Matrix background -->
+  <!-- Matrix background -->
   <canvas id="matrix"></canvas>
 
   <div class="content">
 
-    <!-- Photo at the top -->
+    <!-- Photo first -->
     <img src="JONNY CODES.jpeg" alt="Jonny Affan">
 
-    <!-- Old details first -->
+    <!-- Old details -->
     <div class="section">
       <h1>JONNY-AFFAN</h1>
       <p>My first website is live!</p>
@@ -112,7 +113,7 @@
       </p>
     </div>
 
-    <!-- New details next -->
+    <!-- New details -->
     <div class="section">
       <h2>About Me</h2>
       <p>A normal student</p>
@@ -120,17 +121,17 @@
       <p><span class="highlight">Not professional yet</span> — just learning, building and having fun</p>
     </div>
 
-    <!-- Final credit line -->
+    <!-- Ifthakar credit at the very bottom -->
     <div class="credit">
       Ifthakar — a man who builds creative minds<br>
       He inspires me to do this.<br>
-      A great man with great knowledge.<br>
+      A great man with great knowledge.<br><br>
       Visit also: <a href="https://zahid.codes" target="_blank">zahid.codes</a>
     </div>
 
   </div>
 
-  <!-- Matrix rain script -->
+  <!-- Matrix rain -->
   <script>
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
@@ -152,12 +153,9 @@
 
       for (let i = 0; i < drops.length; i++) {
         const text = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        ctx.fillText(text, x, y);
-
-        if (y > canvas.height && Math.random() > 0.96) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.96) {
           drops[i] = 0;
         }
         drops[i]++;
