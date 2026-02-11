@@ -25,7 +25,7 @@
       width: 100%;
       height: 100%;
       z-index: 1;
-      opacity: 0.85;           /* made more prominent */
+      opacity: 0.85;
       pointer-events: none;
     }
     .content {
@@ -68,7 +68,7 @@
       margin-bottom: 60px;
     }
     .highlight {
-      color: #ff3366;
+      color: #0f0;              /* changed from red to green */
       font-weight: bold;
     }
     .footer {
@@ -116,12 +116,11 @@
     canvas.width = window.innerWidth;
 
     const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン@#$%^&*";
-    const fontSize = 18;  // bigger characters = more prominent
+    const fontSize = 18;
     const columns = canvas.width / fontSize;
     const drops = new Array(Math.floor(columns)).fill(1);
 
     function draw() {
-      // slightly darker trail for better visibility
       ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -135,7 +134,6 @@
 
         ctx.fillText(text, x, y);
 
-        // random reset for continuous rain
         if (y > canvas.height && Math.random() > 0.96) {
           drops[i] = 0;
         }
@@ -143,9 +141,8 @@
       }
     }
 
-    setInterval(draw, 45);  // faster = denser rain
+    setInterval(draw, 45);
 
-    // resize canvas when window size changes
     window.addEventListener('resize', () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
@@ -154,3 +151,4 @@
 
 </body>
 </html>
+ 
