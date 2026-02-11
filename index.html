@@ -5,123 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JONNY-AFFAN</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      background: #000;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
+      background:#000;
+      color:#0f0;
+      font-family:'Courier New', monospace;
+      min-height:100vh;
+      position:relative;
+      overflow-x:hidden;
     }
     canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: 0.85;
-      pointer-events: none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:1;
+      opacity:0.85;
+      pointer-events:none;
     }
     .content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      padding: 40px 20px 160px 20px; /* extra space at bottom */
-      max-width: 900px;
-      margin: 0 auto;
+      position:relative;
+      z-index:10;
+      text-align:center;
+      padding:40px 20px 200px 20px;
+      max-width:900px;
+      margin:0 auto;
     }
     img {
-      width: 280px;
-      max-width: 85%;
-      border: 3px solid #0f0;
-      box-shadow: 0 0 25px rgba(0,255,0,0.5);
-      border-radius: 10px;
-      margin: 35px auto 50px auto;
-      display: block;
+      width:280px;
+      max-width:85%;
+      border:3px solid #0f0;
+      box-shadow:0 0 25px rgba(0,255,0,0.5);
+      border-radius:10px;
+      margin:35px auto 50px auto;
+      display:block;
     }
     h1 {
-      font-size: 4.8rem;
-      margin-bottom: 12px;
-      text-shadow: 0 0 20px #0f0;
-      letter-spacing: 3px;
+      font-size:5rem;
+      margin-bottom:20px;
+      text-shadow:0 0 20px #0f0;
+      letter-spacing:4px;
     }
     h2 {
-      color: #00ff9d;
-      font-size: 2rem;
-      margin: 60px 0 20px 0;
-      border-bottom: 2px solid #0f0;
-      display: inline-block;
-      padding-bottom: 8px;
+      color:#00ff9d;
+      font-size:2.2rem;
+      margin:60px 0 20px 0;
+      border-bottom:2px solid #0f0;
+      display:inline-block;
+      padding-bottom:8px;
     }
     p {
-      font-size: 1.45rem;
-      line-height: 1.7;
-      margin: 14px 0;
+      font-size:1.45rem;
+      line-height:1.7;
+      margin:14px 0;
     }
     .section {
-      margin-bottom: 70px;
+      margin-bottom:70px;
     }
     .highlight {
-      color: #0f0;
-      font-weight: bold;
+      color:#0f0;
+      font-weight:bold;
     }
-    .footer {
-      margin-top: 80px;
-      font-size: 1.2rem;
-      color: #555;
+    .intro {
+      font-size:1.4rem;
+      margin:40px 0;
+      color:#00ff9d;
     }
     .credit {
-      margin-top: 140px;
-      font-size: 1.35rem;
-      color: #00ff9d;
-      line-height: 1.9;
-      padding: 25px 0;
-      border-top: 1px solid #0f0;
+      margin-top:140px;
+      font-size:1.35rem;
+      color:#00ff9d;
+      line-height:1.9;
+      padding:30px 0;
+      border-top:1px solid #0f0;
     }
     a {
-      color: #00ff9d;
-      text-decoration: none;
-      border-bottom: 1px solid #0f0;
+      color:#00ff9d;
+      text-decoration:none;
+      border-bottom:1px solid #0f0;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
 
-  <!-- Matrix rain background -->
   <canvas id="matrix"></canvas>
 
   <div class="content">
 
-    <!-- Photo at top -->
     <img src="JONNY CODES.jpeg" alt="Jonny Affan">
 
-    <!-- Old intro -->
-    <div class="section">
-      <h1>JONNY-AFFAN</h1>
-      <p>My first website is live!</p>
-      <p class="footer" style="margin-top:20px;">
-        Powered by GitHub Pages • 100% free
-      </p>
-    </div>
+    <h1>JONNY-AFFAN</h1>
+    <p style="font-size:1.8rem; margin:20px 0;">My first website is live!</p>
+    <p class="intro" style="margin-top:20px;">
+      Powered by GitHub Pages • 100% free
+    </p>
 
-    <!-- About me -->
+    <!-- Updated About Me section -->
     <div class="section">
       <h2>About Me</h2>
       <p>A normal student</p>
       <p>Web Developer • AI Enthusiast • App Developer</p>
       <p><span class="highlight">Not professional yet</span> — just learning, building and having fun</p>
+      
+      <p style="margin-top:35px;">
+        <strong>Learning:</strong> Web Development • AI • Mobile Apps • Python
+      </p>
+      <p>
+        <strong>Goal:</strong> Build cool things and keep improving
+      </p>
+      <p style="margin-top:25px; font-size:1.55rem;">
+        Also building my own AI: <span class="highlight" style="font-size:1.65rem;">A.N PHANTOM</span>
+      </p>
     </div>
 
-    <!-- Final thanks & inspiration credit -->
+    <!-- Your credit / inspiration -->
     <div class="credit">
       I am Affan Nadeem, also known as Jonny Affan.<br>
       Currently studying in 1st year at Punjab College Fort Abbas.<br><br>
@@ -136,14 +133,11 @@
 
   </div>
 
-  <!-- Matrix rain script -->
   <script>
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-
     const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン@#$%^&*";
     const fontSize = 18;
     const columns = canvas.width / fontSize;
@@ -152,23 +146,18 @@
     function draw() {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       ctx.fillStyle = '#0f0';
       ctx.font = fontSize + 'px monospace';
-
       for (let i = 0; i < drops.length; i++) {
         const text = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.96) {
           drops[i] = 0;
         }
         drops[i]++;
       }
     }
-
     setInterval(draw, 45);
-
     window.addEventListener('resize', () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
