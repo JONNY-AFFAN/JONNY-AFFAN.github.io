@@ -4,4 +4,4 @@ A NORMAL STUDENT
 WEB DEVOLPER                         
 AI DEVOLPER 
 APP DEVOLPER                      
-NOT PROFESSIONAL                       
+NOT PROFESSIONAL                                      
