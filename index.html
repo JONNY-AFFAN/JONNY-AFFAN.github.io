@@ -32,7 +32,7 @@
       position: relative;
       z-index: 10;
       text-align: center;
-      padding: 40px 20px 120px 20px; /* extra bottom padding so credit isn't hidden */
+      padding: 40px 20px 160px 20px; /* extra space at bottom */
       max-width: 900px;
       margin: 0 auto;
     }
@@ -68,7 +68,7 @@
       margin-bottom: 70px;
     }
     .highlight {
-      color: #0f0 !important;           /* forced green, no override possible */
+      color: #0f0;
       font-weight: bold;
     }
     .footer {
@@ -77,11 +77,11 @@
       color: #555;
     }
     .credit {
-      margin-top: 140px;                /* more space so it's clearly visible */
+      margin-top: 140px;
       font-size: 1.35rem;
       color: #00ff9d;
       line-height: 1.9;
-      padding: 20px 0;
+      padding: 25px 0;
       border-top: 1px solid #0f0;
     }
     a {
@@ -96,15 +96,15 @@
 </head>
 <body>
 
-  <!-- Matrix background -->
+  <!-- Matrix rain background -->
   <canvas id="matrix"></canvas>
 
   <div class="content">
 
-    <!-- Photo first -->
+    <!-- Photo at top -->
     <img src="JONNY CODES.jpeg" alt="Jonny Affan">
 
-    <!-- Old details -->
+    <!-- Old intro -->
     <div class="section">
       <h1>JONNY-AFFAN</h1>
       <p>My first website is live!</p>
@@ -113,7 +113,7 @@
       </p>
     </div>
 
-    <!-- New details -->
+    <!-- About me -->
     <div class="section">
       <h2>About Me</h2>
       <p>A normal student</p>
@@ -121,17 +121,22 @@
       <p><span class="highlight">Not professional yet</span> — just learning, building and having fun</p>
     </div>
 
-    <!-- Ifthakar credit at the very bottom -->
+    <!-- Final thanks & inspiration credit -->
     <div class="credit">
-      Ifthakar — a man who builds creative minds<br>
-      He inspires me to do this.<br>
-      A great man with great knowledge.<br><br>
-      Visit also: <a href="https://zahid.codes" target="_blank">zahid.codes</a>
+      I am Affan Nadeem, also known as Jonny Affan.<br>
+      Currently studying in 1st year at Punjab College Fort Abbas.<br><br>
+      
+      I am being taught by Ifthakar Zahid — a man who builds creative minds.<br>
+      I got very inspired by him, so I finally made this website too.<br>
+      He has created lots of apps, websites and more.<br>
+      I created this site just for fun, knowledge and learning.<br><br>
+      
+      Visit his work also: <a href="https://zahid.codes" target="_blank">zahid.codes</a>
     </div>
 
   </div>
 
-  <!-- Matrix rain -->
+  <!-- Matrix rain script -->
   <script>
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
