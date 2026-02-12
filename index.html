@@ -26,7 +26,7 @@
       position:relative;
       z-index:10;
       text-align:center;
-      padding:40px 20px 200px 20px;
+      padding:40px 20px 220px 20px;
       max-width:900px;
       margin:0 auto;
     }
@@ -95,6 +95,45 @@
       text-decoration:underline;
       text-shadow:0 0 10px #0f0;
     }
+    /* Calendar section styles */
+    .calendars {
+      margin: 120px 0 180px 0;
+    }
+    .calendar-title {
+      color:#00ff9d;
+      font-size:2.4rem;
+      margin-bottom:50px;
+      text-shadow:0 0 10px #0f0;
+    }
+    .calendar-grid {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:50px;
+    }
+    .calendar-item {
+      flex:1;
+      min-width:340px;
+      max-width:520px;
+    }
+    .calendar-item h3 {
+      color:#0f0;
+      font-size:1.9rem;
+      margin-bottom:20px;
+    }
+    iframe.calendar-frame {
+      width:100%;
+      height:450px;
+      border:2px solid #0f0;
+      border-radius:12px;
+      box-shadow:0 0 25px rgba(0,255,0,0.3);
+      background:#000;
+    }
+    .calendar-note {
+      margin-top:35px;
+      font-size:1.3rem;
+      color:#888;
+    }
   </style>
 </head>
 <body>
@@ -140,7 +179,7 @@
       Visit his work also: <a href="https://zahid.codes" target="_blank">zahid.codes</a>
     </div>
 
-    <!-- TikTok link at the very end -->
+    <!-- TikTok link -->
     <div class="tiktok">
       Also visit our TikTok channel:<br>
       <a href="https://www.tiktok.com/@jonny_codes_211" target="_blank">
@@ -148,6 +187,35 @@
           @jonny_codes_211
         </span>
       </a>
+    </div>
+
+    <!-- Dual Calendars – Left: Gregorian 2026, Right: Hijri (added here at the end) -->
+    <div class="calendars">
+      <h2 class="calendar-title">Calendars – 2026 & Hijri</h2>
+
+      <div class="calendar-grid">
+
+        <!-- Left: Gregorian 2026 (starts with Jan 2026) -->
+        <div class="calendar-item">
+          <h3>Gregorian – 2026</h3>
+          <iframe class="calendar-frame" 
+                  src="https://www.timeanddate.com/calendar/monthly.html?year=2026&month=1&country=179">
+          </iframe>
+        </div>
+
+        <!-- Right: Hijri Calendar (automatic current Hijri) -->
+        <div class="calendar-item">
+          <h3>Hijri Calendar</h3>
+          <iframe class="calendar-frame" 
+                  src="https://www.islamicfinder.org/hijri-calendar-widget/?theme=default">
+          </iframe>
+        </div>
+
+      </div>
+
+      <p class="calendar-note">
+        Both update automatically every day • Left shows 2026 months (scroll/change) • Right shows current Hijri
+      </p>
     </div>
 
   </div>
@@ -185,3 +253,4 @@
 
 </body>
 </html>
+
