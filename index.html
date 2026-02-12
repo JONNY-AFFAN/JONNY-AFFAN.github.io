@@ -26,11 +26,11 @@
       position:relative;
       z-index:10;
       text-align:center;
-      padding:40px 20px 200px 20px;
+      padding:40px 20px 300px 20px; /* extra bottom space for last GIF */
       max-width:900px;
       margin:0 auto;
     }
-    img {
+    img.profile {
       width:280px;
       max-width:85%;
       border:3px solid #0f0;
@@ -84,6 +84,8 @@
       color:#00ff9d;
       padding:30px 0;
       border-top:1px dashed #0f0;
+      position:relative;
+      z-index:2;
     }
     a {
       color:#0f0;
@@ -95,6 +97,45 @@
       text-decoration:underline;
       text-shadow:0 0 10px #0f0;
     }
+
+    /* GIF containers – same position as old calendars */
+    .gifs-container {
+      margin: 100px 0 160px 0;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:50px;
+    }
+    .gif-item {
+      flex:1;
+      min-width:320px;
+      max-width:480px;
+      text-align:center;
+    }
+    .gif-item img {
+      width:100%;
+      max-width:480px;
+      border:2px solid #0f0;
+      border-radius:10px;
+      box-shadow:0 0 20px rgba(0,255,0,0.3);
+    }
+
+    /* Third GIF – centered at bottom, behind TikTok */
+    .bottom-gif {
+      position:absolute;
+      bottom:40px;
+      left:50%;
+      transform:translateX(-50%);
+      width:80%;
+      max-width:600px;
+      opacity:0.7;
+      z-index:1;
+      pointer-events:none;
+    }
+    .bottom-gif img {
+      width:100%;
+      border-radius:12px;
+    }
   </style>
 </head>
 <body>
@@ -103,7 +144,7 @@
 
   <div class="content">
 
-    <img src="JONNY CODES.jpeg" alt="Jonny Affan">
+    <img src="JONNY CODES.jpeg" alt="Jonny Affan" class="profile">
 
     <h1>JONNY-AFFAN</h1>
     <p style="font-size:1.8rem; margin:20px 0;">My first website is live!</p>
@@ -140,7 +181,7 @@
       Visit his work also: <a href="https://zahid.codes" target="_blank">zahid.codes</a>
     </div>
 
-    <!-- TikTok link at the very end -->
+    <!-- TikTok link -->
     <div class="tiktok">
       Also visit our TikTok channel:<br>
       <a href="https://www.tiktok.com/@jonny_codes_211" target="_blank">
@@ -148,6 +189,21 @@
           @jonny_codes_211
         </span>
       </a>
+    </div>
+
+    <!-- Two GIFs in the old calendar positions -->
+    <div class="gifs-container">
+      <div class="gif-item">
+        <img src="put this.gif" alt="GIF 1">
+      </div>
+      <div class="gif-item">
+        <img src="put this 2.gif" alt="GIF 2">
+      </div>
+    </div>
+
+    <!-- Third GIF – centered at bottom, behind TikTok -->
+    <div class="bottom-gif">
+      <img src="put this 3.gif" alt="Background GIF 3">
     </div>
 
   </div>
