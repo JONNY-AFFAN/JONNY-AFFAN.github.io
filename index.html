@@ -26,7 +26,7 @@
       position:relative;
       z-index:10;
       text-align:center;
-      padding:40px 20px 280px 20px; /* extra bottom space for last GIF */
+      padding:40px 20px 300px 20px;
       max-width:900px;
       margin:0 auto;
     }
@@ -98,9 +98,9 @@
       text-shadow:0 0 10px #0f0;
     }
 
-    /* GIF containers – equal size, no overlap */
+    /* GIFs after About Me – forced equal size */
     .gifs-container {
-      margin: 80px 0 100px 0;
+      margin: 80px 0 120px 0;
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
@@ -109,13 +109,14 @@
     .gif-item {
       flex:1;
       min-width:300px;
-      max-width:450px;
+      max-width:450px;           /* both limited to same max width */
       text-align:center;
     }
     .gif-item img {
-      width:100%;
-      max-width:450px;
-      height:auto;
+      width:100%;                /* fill container */
+      max-width:450px;           /* both capped at same size */
+      height:320px;              /* fixed equal height – adjust if needed */
+      object-fit:contain;        /* keeps aspect ratio, no stretch */
       border:2px solid #0f0;
       border-radius:10px;
       box-shadow:0 0 20px rgba(0,255,0,0.3);
@@ -123,23 +124,21 @@
       margin:0 auto;
     }
 
-    /* Third GIF – centered at very bottom, behind TikTok, equal size */
+    /* Third GIF at very end – same size as others */
     .bottom-gif {
-      margin: 80px auto 40px auto;
+      margin: 100px auto 60px auto;
       max-width:450px;
       width:90%;
       text-align:center;
-      position:relative;
-      z-index:1;
     }
     .bottom-gif img {
       width:100%;
       max-width:450px;
-      height:auto;
+      height:320px;              /* same height as the others */
+      object-fit:contain;
       border:2px solid #0f0;
       border-radius:10px;
       box-shadow:0 0 20px rgba(0,255,0,0.3);
-      opacity:0.85;
     }
   </style>
 </head>
@@ -174,7 +173,7 @@
       </p>
     </div>
 
-    <!-- Two GIFs right after About Me – equal size, no overlap -->
+    <!-- Two GIFs right after About Me – now forced equal size -->
     <div class="gifs-container">
       <div class="gif-item">
         <img src="put this.gif" alt="GIF 1">
@@ -206,7 +205,7 @@
       </a>
     </div>
 
-    <!-- Third GIF – centered at very bottom, after TikTok, equal size, no overlap -->
+    <!-- Third GIF at very end – centered, same size as others, no overlap -->
     <div class="bottom-gif">
       <img src="put this 3.gif" alt="GIF 3">
     </div>
