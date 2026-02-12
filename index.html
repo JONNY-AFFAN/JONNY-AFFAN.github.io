@@ -26,7 +26,7 @@
       position:relative;
       z-index:10;
       text-align:center;
-      padding:40px 20px 300px 20px; /* extra bottom space for last GIF */
+      padding:40px 20px 280px 20px; /* extra bottom space for last GIF */
       max-width:900px;
       margin:0 auto;
     }
@@ -98,43 +98,48 @@
       text-shadow:0 0 10px #0f0;
     }
 
-    /* GIF containers – same position as old calendars */
+    /* GIF containers – equal size, no overlap */
     .gifs-container {
-      margin: 100px 0 160px 0;
+      margin: 80px 0 100px 0;
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      gap:50px;
+      gap:40px;
     }
     .gif-item {
       flex:1;
-      min-width:320px;
-      max-width:480px;
+      min-width:300px;
+      max-width:450px;
       text-align:center;
     }
     .gif-item img {
       width:100%;
-      max-width:480px;
+      max-width:450px;
+      height:auto;
       border:2px solid #0f0;
       border-radius:10px;
       box-shadow:0 0 20px rgba(0,255,0,0.3);
+      display:block;
+      margin:0 auto;
     }
 
-    /* Third GIF – centered at bottom, behind TikTok */
+    /* Third GIF – centered at very bottom, behind TikTok, equal size */
     .bottom-gif {
-      position:absolute;
-      bottom:40px;
-      left:50%;
-      transform:translateX(-50%);
-      width:80%;
-      max-width:600px;
-      opacity:0.7;
+      margin: 80px auto 40px auto;
+      max-width:450px;
+      width:90%;
+      text-align:center;
+      position:relative;
       z-index:1;
-      pointer-events:none;
     }
     .bottom-gif img {
       width:100%;
-      border-radius:12px;
+      max-width:450px;
+      height:auto;
+      border:2px solid #0f0;
+      border-radius:10px;
+      box-shadow:0 0 20px rgba(0,255,0,0.3);
+      opacity:0.85;
     }
   </style>
 </head>
@@ -169,6 +174,16 @@
       </p>
     </div>
 
+    <!-- Two GIFs right after About Me – equal size, no overlap -->
+    <div class="gifs-container">
+      <div class="gif-item">
+        <img src="put this.gif" alt="GIF 1">
+      </div>
+      <div class="gif-item">
+        <img src="put this 2.gif" alt="GIF 2">
+      </div>
+    </div>
+
     <div class="credit">
       I am Affan Nadeem, also known as Jonny Affan.<br>
       Currently studying in 1st year at Punjab College Fort Abbas.<br><br>
@@ -191,19 +206,9 @@
       </a>
     </div>
 
-    <!-- Two GIFs in the old calendar positions -->
-    <div class="gifs-container">
-      <div class="gif-item">
-        <img src="put this.gif" alt="GIF 1">
-      </div>
-      <div class="gif-item">
-        <img src="put this 2.gif" alt="GIF 2">
-      </div>
-    </div>
-
-    <!-- Third GIF – centered at bottom, behind TikTok -->
+    <!-- Third GIF – centered at very bottom, after TikTok, equal size, no overlap -->
     <div class="bottom-gif">
-      <img src="put this 3.gif" alt="Background GIF 3">
+      <img src="put this 3.gif" alt="GIF 3">
     </div>
 
   </div>
@@ -241,4 +246,3 @@
 
 </body>
 </html>
-
